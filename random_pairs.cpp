@@ -8,9 +8,8 @@ void findUnions(int N){
     int* sz = new int[N];
     int i, j, p, q;
     int numOfUnions = 0;
-    int edgeCount = 0;  // Edge counter
+    int edgeCount = 0;
 
-    // Initialize arrays
     for (i = 0; i < N; i++){
         id[i] = i;
         sz[i] = 1;
@@ -25,6 +24,7 @@ void findUnions(int N){
         q = dist(gen);
         edgeCount++;  // Increment edge counter for every generated pair
 
+        // Path compression
         for (i = p; i != id[i]; i = id[i]){
             id[i] = id[id[i]];
         }
@@ -68,3 +68,12 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
